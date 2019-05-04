@@ -1,4 +1,4 @@
-var allCategories = {},
+let allCategories = {},
     activeArticles = {},
     inactiveCategories = 0,
     feeds, currentFeed, proxy;
