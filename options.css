@@ -1,0 +1,347 @@
+@font-face {
+  font-family: "Roboto Mono";
+  src: url('Fonts/RobotoMono-Medium.ttf');
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-family: "Roboto Mono";
+}
+
+.field {
+  position: relative;
+  padding: 50px;
+  width: 600px;
+  height: auto;
+  margin: 0px auto 20px auto;
+  top: 20px;
+  border-radius: 5px;
+  border: 1px solid #7c7c7c65;
+  box-shadow: 0 0 10px #000000cc;
+  overflow: visible;
+}
+
+.dataBox {
+  position: relative;
+  width: calc(100%-50px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: solid 1px #7c7c7c65;
+  box-shadow: inset 0 0 10px 2px #00000025;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.dataBox::-webkit-scrollbar {
+  position: absolute;
+  height: 3px;
+  width: 3px;
+  background-color: #dddddd5f;
+}
+
+.dataBox::-webkit-scrollbar-thumb {
+  height: 3px;
+  width: 3px;
+  background-color: #9f9f9f5f;
+}
+
+#feeds {
+  display: block;
+  height: 220px;
+}
+
+#currentProxy {
+  display: inline-block;
+  position: relative;
+  height: 30px;
+  width: 468px;
+  padding: 0 10px;
+  top: 10px;
+}
+
+.fieldButton {
+  position: relative;
+  outline: none;
+  border: 3px solid white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px #00000080/* , inset 0 0 5px 1px #ffffff64 */;
+  margin: 20px 10px 0 0;
+  height: 40px;
+  width: 100px;
+  background-color: #0099ff;
+  color: white;
+  font-weight: 1000;
+  font-size: 10pt;
+  user-select: none;
+}
+
+.fieldButton:active {
+  box-shadow: inset 0 0 10px 1px #00000080, 0 0 5px #00000080; 
+}
+
+#setProxy {
+  margin: 0;
+}
+
+.feed {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  padding: 0;
+  border: solid #00000036;
+  border-width: 0 0 1px 0;
+  border-collapse: collapse;
+  background-color: white;
+  overflow: visible;
+}
+
+.feed > span {
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  color: #0000009f;
+  font-weight: 500;
+  font-size: 0.9em;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 50px;
+  transition: 0.2s;
+}
+
+.feed .name {
+  width: 268px;
+  padding: 0 10px;
+}
+
+.feed .src {
+  width: 290px;
+  padding: 0 0 0 10px;
+  border-right: 10px solid white;
+  transition-delay: 0.5s;
+}
+
+.feed:hover .src {
+  width: 270px;
+  transition-delay: 0s;
+}
+
+.feed .context {
+  width: 20px;
+}
+
+.feed:hover .context:hover {
+  background: #00000046
+}
+
+.feed:hover .context:active {
+  background: #00000060;
+  transition: 0.1s; 
+}
+
+.feed form {
+  height: 100%;
+  width: calc(100%-10px);
+}
+
+.feed input[type="text"] {
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 100%;
+}
+
+#currentProxy form {
+  height: 100%;
+  width: calc(100%-10px);
+}
+
+#currentProxy input[type="text"] {
+  background: none;
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 100%;
+}
+
+.dot {
+  position: relative;
+  margin: 5px auto;
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
+  background-color: #00000000;
+  top: 10px;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.feed:hover .dot {
+  background-color: #00000086;
+  transition-delay: 0s;
+}
+
+.dot:active {
+  background-color: #000000cc;
+}
+
+.contextMenu {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #cccccc;
+  left: 649px;
+  top: 50px;
+  width: 200px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.contextMenu > button {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  float: left;
+}
+
+.contextMenu > button:hover {
+  box-shadow: inset 0 0 2000px #00000020;
+}
+
+.contextMenu > button:active {
+  box-shadow: inset 0 0 2000px #00000040;
+}
+
+#feedRefresh {
+  position: relative;
+  font-size: 30px;
+  color: #00000080;
+  background: none;
+  top: 5px;
+  outline: 0;
+  border: 0;
+  user-select: none;
+}
+
+#feedRefresh:hover {
+  color: #000000b0;
+}
+
+#feedRefresh:active {
+  color: #000000ff;
+}
+
+#modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #00000000;
+  transition: 0.3s;
+}
+
+#modalContainer.on {
+  background-color: #000000c9;
+  transition: 0.3s;
+}
+
+.modalMenu {
+  display: none;
+  position: absolute;
+  height: auto;
+  max-height: 80%;
+  width: 400px;
+  background-color: #ffffff;
+  transform: translateY(-50%) translateX(-50%);
+  left: 50%;
+  top: 50%;
+  padding: 50px;
+  box-shadow: 0 0 15px #00000080;
+}
+
+.modalMenu input[type="text"] {
+  position: relative;
+  height: 15px;
+  width: 150px;
+  outline: 0;
+  padding: 10px;
+  border: 1px solid #8d8d8d;
+}
+
+#newFeedSrc {
+  left: 48px;
+}
+
+input[type="submit"] {
+  position: relative;
+  height: 40px;
+  width: 150px;
+  outline: 0;
+  background: #0084ff;
+  box-shadow: 0 0 5px #00000080;
+  border: 1px solid white;
+  border-radius: 5px;
+  top: 20px;
+  transition-duration: 0.1s;
+  color: white;
+  font-size: 16pt;
+}
+
+input[type="submit"]:active {
+  box-shadow: 0 0 5px #00000080, inset 0 0 10px #00000080;
+}
+
+#hello {
+  position: fixed;
+  height: auto;
+  width: 300px;
+  background-color: #00ff0d80;
+  border-radius: 7px 7px 0 0;
+  transition-duration: 0.8s;
+  padding: 10px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #555555;
+  font-size: 1em;
+  text-align: center;
+}
+
+#addMultipleFeeds {
+  position: relative;
+  top: 20px;
+  border: none;
+  height: 30px;
+  box-shadow: none;
+}
+
+#addMultipleFeeds:active {
+  box-shadow: inset 0 0 10px #00000050;
+}
+
+#inputFeeds .inputTextBlock {
+  width: 100%;
+  height: 300px;
+  resize: none;
+  white-space: pre;
+}
+
+#inputFeeds .fieldButton {
+  width: auto;
+  padding: 0 10px;
+}

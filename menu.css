@@ -1,0 +1,29 @@
+#menu {
+  background-color: #303030;
+  width: 200px;
+  height: 100%;
+  box-sizing: border-box;
+  border-right: 3px solid #dddddd;
+  float: right;
+}
+
+#menu .button {
+  height: 60px;
+  width: 100%;
+  background: inherit;
+  border: none;
+  outline: none;
+  color: white;
+  transition: 0.1s;
+  transform: translateY(300px);
+  user-select: none;
+}
+
+#menu .button:hover {
+  box-shadow: 0 0 2000px rgba(69, 0, 124, 0.8) inset;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#menu .button.open {
+  background-color: #a0a0a0;
+}

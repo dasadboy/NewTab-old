@@ -1,0 +1,85 @@
+.datetimecontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 180px;
+  height: 250px;
+  top: 10px;
+  left: 50%;
+  user-select: none;
+  border-radius: 2px;
+  transition: 0.5s;
+  transform: translate(10px, 10px);
+}
+
+.datetimecontainer.menuout {
+  transform: translate(10px, 10px) translateX(-200px);
+  background: rgba(0, 0, 0, 0);
+}
+
+/* Time */
+.clock {
+  display: block;
+  position: relative;
+  color: white;
+  float: left;
+  font-family: "Advent Pro";
+}
+
+.clock.hours,
+.clock.minutes {
+  font-size: 44pt;
+}
+
+.clock.hours {
+  font-weight: bold;
+}
+
+.clock.seconds {
+  font-size: 32pt;
+  padding: 4px;
+  padding-right: 0;
+}
+
+/* Date */
+.date {
+  transform: translateY(0px);
+  justify-content: right;
+  align-items: center;
+}
+
+.date .day,
+.date .month,
+.date .year {
+  display: inline-block;
+  position: relative;
+}
+
+.date .day {
+  font-size: 32pt;
+  font-weight: bold;
+  color: red;
+}
+
+.date .month,
+.date .year {
+  font-size: 20pt;
+  font-weight: lighter;
+  color: white;
+  float: left;
+}
+
+.date .year {
+  float: right;
+  width: 100%;
+  text-align: right;
+  padding: 0 5px 0 0;
+}
+
+.date .month {
+  padding: 10px 0 0 5px;
+}
