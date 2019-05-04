@@ -292,7 +292,7 @@ const peekMessage = message => {
   parseAndSubmit);
 
   document.querySelector("#inputFeeds textarea").placeholder = 
-  "'Feed Name', 'Feed Source'\nFeeds are separated by lines."
+  "Feed Name, Feed Source\nFeeds are separated by lines."
 
   window.addEventListener("load", loadFeeds);
   window.addEventListener("load", getProxy);
