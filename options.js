@@ -243,9 +243,9 @@ const parseAndSubmit = () => {
   document.querySelector("#inputFeeds textarea").value = "";
   for (line of lines) {
     if (line !== "") {
-      const splitLine = line.split(/'\s*,\s*'/),
-            feedName = splitLine[0].split(/\s*'\s*/)[1],
-            feedSrc = splitLine[1].split(/\s*'\s*/)[0];
+      const splitLine = line.split(/\s*,\s*/),
+            feedName = splitLine[0],
+            feedSrc = splitLine[1];
       
       addFeed(feedName, feedSrc);
     }
